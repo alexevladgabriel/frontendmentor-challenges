@@ -174,7 +174,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -184,7 +185,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -350,12 +352,12 @@ template {
 
 /** CUSTOM CSS **/
 :root {
-  --paragraph-font-size: 15px;
+  --paragraph-font-size: 16px;
 
+  --yellow: hsl(47, 88%, 63%);
   --white: hsl(0, 0%, 100%);
-  --light-gray: hsl(212, 45%, 89%);
-  --grayish-blue: hsl(220, 15%, 55%);
-  --dark-blue: hsl(218, 44%, 22%);
+  --grey: hsl(0, 0%, 50%);
+  --black: hsl(0, 0%, 7%);
 }
 
 * {
@@ -366,13 +368,13 @@ template {
 
 body {
   font-size: var(--paragraph-font-size);
-  background-color: var(--light-gray);
+  background-color: var(--yellow);
 
-  font-family: "Outfit", sans-serif;
+  font-family: "Figtree", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  
+
   height: 100vh;
 
   display: grid;
@@ -388,26 +390,77 @@ h1 {
   background-color: var(--white);
 
   border-radius: 20px;
-  margin: 0 28px;
-  padding: 16px 16px 40px 16px;
-  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.0477);
-  max-width: 320px;
+  margin: 0 24px;
+  padding: 24px;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+  max-width: 384px;
+  border: 1px solid var(--black);
 }
 
-.qrcode {
+.preview-img {
+  display: block;
   border-radius: 10px;
   max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tag {
+  background-color: var(--yellow);
+  color: var(--black);
+  line-height: 150%;
+  font-size: 14px;
+  font-weight: 900;
+  padding: 4px 12px;
+  border-radius: 4px;
+  max-width: fit-content;
 }
 
 .container {
-  text-align: center;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
+
 .container h1 {
-  margin: 24px 0 16px 0;
+  margin: 0;
   color: var(--dark-blue);
+  line-height: 150%;
+}
+
+.container h1:hover {
+  cursor: pointer;
+  color: var(--yellow);
+}
+
+.container .published {
+  color: var(--black);
+  font-size: 12px;
+  line-height: 150%;
 }
 
 .container p {
-  padding: 0 16px;
-  color: var(--grayish-blue);
+  color: var(--grey);
+  line-height: 150%;
+}
+
+/* Author */
+.author {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.author span {
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 150%;
 }
