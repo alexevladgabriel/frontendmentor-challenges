@@ -352,11 +352,48 @@ template {
 
 /** CUSTOM CSS **/
 :root {
-  --paragraph-font-size: 16px;
+  --paragraph-font-size: 14px;
+
+  --green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 20%);
+  --dark-grey: hsl(0, 0%, 12%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/public/static/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("/public/static/Inter-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("/public/static/Inter-Bold.ttf") format("truetype");
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: var(--paragraph-font-size);
+  color: var(--grey);
+  background-color: var(--off-black);
+
+  display: grid;
+  place-items: center;
 }
